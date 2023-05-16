@@ -1,4 +1,6 @@
 import { Layout, Space, Collapse } from 'antd';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const { Panel } = Collapse;
 interface CourseProps {
@@ -8,9 +10,16 @@ const { Header, Footer, Sider, Content } = Layout;
 import dynamic from 'next/dynamic'
 
 const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), { ssr: false })
+
 const Course = (props: CourseProps) => {
   const { course } = props
-  console.log('course', course)
+  const router = useRouter()
+  // const {lecture, group } = router.query
+  const group: any = router.query.group
+  const lecture: any = router.query.lecture
+  const lectureGroup = course.lecture[group]
+  const lectureItem = lectureGroup.find(item => item.index == lecture)
+  const videoUrl = lectureItem.url
   return (
     <div className='flex w-full h-full'>
       <aside className='flex-[0_0_300px]'>
@@ -18,9 +27,11 @@ const Course = (props: CourseProps) => {
           {course.lectureGroup.map(group => (
             <Panel header={group.title} key={`group-${group.id}`}>
               {course.lecture[group.id].map(lecture => (
-                <div className='border-b'>
-                  {lecture.title}
-                </div>
+                <Link href={`/course?lecture=${lecture.index}&group=${group.id}`}>
+                  <div className='border-b cursor-pointer'>
+                    {lecture.title}
+                  </div>
+                </Link>
               ))}
             </Panel>
 
@@ -30,7 +41,7 @@ const Course = (props: CourseProps) => {
 
       </aside>
       <main className='flex-auto'>
-        <VideoPlayer />
+        <VideoPlayer videoUrl={videoUrl} />
       </main>
     </div>
   )
