@@ -1,0 +1,12 @@
+.commentTextArea {
+  resize: none;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  width: 100%;
+  resize: none;
+
+  @apply text-fs-14 p-3 h-11;
+  &:focus {
+    outline: none;
+  }
+}

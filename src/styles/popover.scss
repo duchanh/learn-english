@@ -1,0 +1,31 @@
+.meey-popover {
+  @apply relative;
+  .popover-overlay {
+    @apply absolute z-20 pt-2 transition-all duration-300;
+    &.popover-overlay-bottom-left {
+      @apply scale-0 -translate-x-1/2 -translate-y-1/2;
+    }
+
+    &.popover-overlay-bottom-right {
+      @apply scale-0 translate-x-1/2 -translate-y-1/2 right-0;
+    }
+
+    &.popover-overlay-top-right {
+      @apply scale-0 translate-x-1/2 translate-y-full right-1/2;
+      transform: translate(50%, calc(-50% - 10px)) !important;
+    }
+ 
+    &.popover-overlay-open {
+      @apply scale-100 translate-x-0 translate-y-0;
+    }
+   
+    &.popover-overlay-center {
+      @apply scale-100 -translate-x-4 translate-y-0;
+    }
+
+  }
+  .meey-dropdown-user {
+    box-shadow: 0px 5px 15px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+}

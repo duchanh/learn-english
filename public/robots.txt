@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /meeyproject/images/*
+Disallow: /meeyshare/images/*
+Disallow: /fonts/*
+Disallow: /zoom/*
+Disallow: /*?attributes=*
+Disallow: /404
+Allow: /

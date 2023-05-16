@@ -1,0 +1,174 @@
+.meey-button {
+	@apply px-2 py-3 h-11 text-fs-14 rounded-lg outline-none shadow-none font-medium flex items-center text-center;
+	&.meey-button-prefix-icon {
+		i {
+			@apply mr-2;
+		}
+	}
+	&.meey-button-primary {
+		&.meey-button-outline {
+			@apply bg-transparent border border-solid border-primary-400 text-primary-400 font-medium cursor-pointer duration-300;
+
+			&:hover {
+				@apply bg-primary-50;
+			}
+			&:active {
+				@apply bg-primary-100;
+			}
+			&:focus {
+				@apply bg-light-gray;
+			}
+			&:focus:active {
+				@apply bg-primary-100;
+			}
+			&:disabled {
+				@apply border-primary-200 text-primary-100 cursor-not-allowed;
+			}
+		}
+
+		&.meey-button-filled {
+			@apply bg-primary-400 border border-solid border-primary-400 text-white font-medium cursor-pointer duration-300;
+
+			&:hover {
+				@apply bg-primary-500;
+			}
+			&:active {
+				@apply bg-primary-500;
+			}
+			&:focus {
+				@apply bg-primary-700;
+			}
+			&:focus:active {
+				@apply bg-primary-500;
+			}
+			&:disabled {
+				@apply border-primary-50 bg-gray-200 cursor-not-allowed cursor-not-allowed;
+			}
+		}
+
+		&.meey-button-link {
+			@apply bg-light-gray border border-solid border-transparent text-primary-400 font-medium cursor-pointer duration-300;
+
+			&:hover {
+				@apply bg-primary-50;
+			}
+			&:active {
+				@apply border-primary-400 bg-primary-50;
+			}
+			&:focus {
+				@apply border-primary-400;
+			}
+			&:focus:active {
+				@apply bg-primary-50;
+			}
+			&:disabled {
+				@apply text-primary-100 cursor-not-allowed;
+			}
+		}
+	}
+  &.meey-button-danger {
+    @apply bg-red-300  border border-transparent text-white font-medium cursor-pointer duration-300;
+
+    &:hover {
+      @apply bg-red-500;
+    }
+    &:active {
+      @apply border-primary-400 bg-primary-50;
+    }
+    &:focus {
+      @apply border-primary-400;
+    }
+    &:focus:active {
+      @apply bg-primary-50;
+    }
+    &:disabled {
+      @apply text-primary-100 cursor-not-allowed;
+    }
+  }
+  &.meey-button-outline {
+
+    &.meey-button-secondary {
+      @apply bg-white border border-solid border-grey-400 text-grey-400 font-medium cursor-pointer duration-300;
+  
+      &:hover {
+        @apply bg-light-gray;
+      }
+      &:active {
+        @apply border-light-gray bg-light-gray;
+      }
+      &:focus {
+        @apply border-light-gray;
+      }
+      &:focus:active {
+        @apply bg-primary-50;
+      }
+      &:disabled {
+        @apply text-gray-200 border-none bg-light-gray cursor-not-allowed;
+      }
+    }
+  }
+
+
+
+	// &.meey-button-default {
+	// 	&.meey-button-outline {
+	// 		@apply bg-light-gray border border-solid border-primary-400 text-primary-400 font-medium cursor-pointer duration-300;
+
+	// 		&:hover {
+	// 			@apply bg-primary-50;
+	// 		}
+	// 		&:active {
+	// 			@apply bg-primary-100;
+	// 		}
+	// 		&:focus {
+	// 			@apply bg-light-gray;
+	// 		}
+	// 		&:focus:active {
+	// 			@apply bg-primary-100;
+	// 		}
+	// 		&:disabled {
+	// 			@apply border-primary-200 text-primary-100 cursor-not-allowed;
+	// 		}
+	// 	}
+
+	// 	&.meey-button-filled {
+	// 		@apply bg-primary-400 border border-solid border-primary-400 text-white font-medium cursor-pointer duration-300;
+
+	// 		&:hover {
+	// 			@apply bg-primary-400;
+	// 		}
+	// 		&:active {
+	// 			@apply bg-primary-500;
+	// 		}
+	// 		&:focus {
+	// 			@apply bg-primary-700;
+	// 		}
+	// 		&:focus:active {
+	// 			@apply bg-primary-500;
+	// 		}
+	// 		&:disabled {
+	// 			@apply border-primary-50 text-primary-200 cursor-not-allowed;
+	// 		}
+	// 	}
+
+	// 	&.meey-button-link {
+	// 		@apply bg-light-gray border border-solid border-transparent text-primary-400 font-medium cursor-pointer duration-300;
+
+	// 		&:hover {
+	// 			@apply bg-primary-50;
+	// 		}
+	// 		&:active {
+	// 			@apply border-primary-400 bg-primary-50;
+	// 		}
+	// 		&:focus {
+	// 			@apply border-primary-400;
+	// 		}
+	// 		&:focus:active {
+	// 			@apply bg-primary-50;
+	// 		}
+	// 		&:disabled {
+	// 			@apply text-primary-100 cursor-not-allowed;
+	// 		}
+	// 	}
+	// }
+}

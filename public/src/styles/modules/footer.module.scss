@@ -1,0 +1,12 @@
+.footerLinkItem {
+  @apply flex items-center;
+  &:last-child {
+    .footerLinkItemDivide {
+      @apply hidden;
+    }
+  }
+}
+
+.footerLinkItemDivide {
+  @apply w-[1px] h-3 bg-grey-200;
+}
