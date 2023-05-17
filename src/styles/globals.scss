@@ -49,63 +49,6 @@ textarea {
   appearance: none;
 }
 
-.feed-content {
-  div {
-    max-width: 100%;
-  }
-  img {
-    max-width: 100%;
-  }
-  .z-photoviewer-wrapper {
-    display: none;
-  }
-  iframe {
-    border: none;
-    width: 100%;
-    height: auto;
-  }
-  table {
-    width: 100% !important;
-  }
-}
-.backdrop {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.backdrop-2 {
-  background: rgba(0, 0, 0, 0.8);
-}
-.all-inherit {
-  all: inherit;
-}
-.all-unset {
-  all: unset;
-}
-.infinite-scroll-component {
-  overflow: unset !important;
-}
-
-.zaolo-share-detail {
-  img {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-.animation-fadeToRight {
-  animation: fadeRight 0.25s ease-in-out;
-}
-
-.animation-fadeToBottom {
-  animation: fadeBottom 0.25s ease-in-out;
-}
-
-.word-break {
-  word-break: break-word;
-}
-
-.block-html {
-  p, div {
-    @apply text-base #{!important};
-  }
+.ant-collapse-content-box {
+  padding: 0 !important;
 }
