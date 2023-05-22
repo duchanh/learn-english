@@ -1,4 +1,4 @@
-import { Collapse } from 'antd';
+import { Collapse, Button, Modal } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo'
@@ -9,10 +9,12 @@ interface CourseProps {
   course: any
 }
 import dynamic from 'next/dynamic'
+import { useState } from 'react';
 
 const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), { ssr: false })
 
 const Course = (props: CourseProps) => {
+  const [showAnswer, setShowAnser] = useState(false)
   const { course } = props
   const router = useRouter()
   const groupId: any = router.query.group
@@ -28,7 +30,7 @@ const Course = (props: CourseProps) => {
         title="24 days"
       />
       <div className='flex w-full h-full'>
-        <aside className='flex-[0_0_300px]'>
+        <aside className='flex-[0_0_300px] sticky top-0 max-h-[100vh] overflow-auto'>
           <Collapse defaultActiveKey={[groupId]} accordion>
             {course.lectureGroup.map(group => (
               <Panel header={group.title} key={group.id}>
@@ -55,6 +57,8 @@ const Course = (props: CourseProps) => {
           {currentLecture.type === 'read' && (
             <div>
               <img src={currentLecture.img} className="w-full h-full" />
+
+
             </div>
           )}
 
@@ -78,6 +82,16 @@ const Course = (props: CourseProps) => {
           {currentLecture.url && (
             <VideoPlayer videoUrl={videoUrl} />
           )}
+
+          {currentLecture.answer && (
+            <div className='my-8 flex items-center justify-center'>
+              <Button onClick={() => setShowAnser(true)}>Xem đáp án</Button>
+              <Modal title="Đáp án" open={showAnswer} onCancel={() => setShowAnser(false)} centered destroyOnClose footer={null} >
+                <img src={currentLecture.answer} className="w-full h-auto object-cover" />
+              </Modal>
+            </div>
+          )}
+
 
         </main>
       </div>
