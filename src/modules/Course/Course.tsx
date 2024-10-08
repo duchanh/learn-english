@@ -33,7 +33,7 @@ const Course = (props: any) => {
             {course.lectureGroup.map(group => (
               <Panel header={group.title} key={group.id}>
                 {course.lecture[group.id].map(lecture => (
-                  <Link href={`/course?lecture=${lecture.index}&group=${group.id}`} className={clsx('flex border-b border-grey-100 border-solid border-[1px] border-x-0 border-t-0 last:border-0', {
+                  <Link href={`?lecture=${lecture.index}&group=${group.id}`} className={clsx('flex border-b border-grey-100 border-solid border-[1px] border-x-0 border-t-0 last:border-0', {
                     'bg-primary-100': lecture.index == lectureId
                   })} >
                     <div className='flex cursor-pointer px-4 py-2'>
