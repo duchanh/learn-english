@@ -1,6 +1,6 @@
 import Course from '@/modules/Course'
 import { GetServerSidePropsContext } from 'next'
-import { getCourseProps } from '@/fetch-data/course-props'
+import { getCourseProps } from '@/fetch-data/course-advance-props'
 import { NextSeo } from 'next-seo'
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -9,7 +9,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 const Page = (props: any) => {
   return (
     <>
-      <NextSeo title='24 days' />
+      <NextSeo title='Advance' />
       <Course {...props} />
     </>
   )

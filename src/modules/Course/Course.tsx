@@ -13,7 +13,7 @@ import { useState } from 'react';
 
 const VideoPlayer = dynamic(() => import('@/components/VideoPlayer'), { ssr: false })
 
-const Course = (props: CourseProps) => {
+const Course = (props: any) => {
   const [showAnswer, setShowAnser] = useState(false)
   const { course } = props
   const router = useRouter()
@@ -26,9 +26,7 @@ const Course = (props: CourseProps) => {
 
   return (
     <>
-      <NextSeo
-        title="24 days"
-      />
+     
       <div className='flex w-full h-full'>
         <aside className='flex-[0_0_300px] sticky top-0 max-h-[100vh] overflow-auto'>
           <Collapse defaultActiveKey={[groupId]} accordion>
@@ -54,7 +52,7 @@ const Course = (props: CourseProps) => {
 
         </aside>
         <main className='flex-auto'>
-          {currentLecture.type === 'read' && (
+          {currentLecture?.type === 'read' && (
             <div>
               <img src={currentLecture.img} className="w-full h-full" />
 
@@ -62,7 +60,7 @@ const Course = (props: CourseProps) => {
             </div>
           )}
 
-          {currentLecture.type === 'listen' && (
+          {currentLecture?.type === 'listen' && (
             <>
               {currentLecture.mp3 && (
                 <>
@@ -79,11 +77,11 @@ const Course = (props: CourseProps) => {
             </>
           )}
 
-          {currentLecture.url && (
+          {currentLecture?.url && (
             <VideoPlayer videoUrl={videoUrl} />
           )}
 
-          {currentLecture.answer && (
+          {currentLecture?.answer && (
             <div className='my-8 flex items-center justify-center'>
               <Button onClick={() => setShowAnser(true)}>Xem đáp án</Button>
               <Modal title="Đáp án" open={showAnswer} onCancel={() => setShowAnser(false)} centered destroyOnClose footer={null} >

@@ -1,9 +1,9 @@
 import { GetServerSidePropsContext } from 'next'
-import fetchCourse from '@/api/endpoint/course/fetch-course'
+import fetchCourseAdvance from '@/api/endpoint/course/fetch-course-advance'
 
 export async function getCourseProps(context: GetServerSidePropsContext) {
   try {
-    const course: any = await fetchCourse()
+    const course: any = await fetchCourseAdvance()
     return {
       props: {
         course
